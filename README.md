@@ -37,3 +37,4 @@ El sistema:
   - Integrar datos reales de mareas
   - Ajustar los parámetros del modelo según la ubicación
   - Considerar factores adicionales como la luna, el viento, etc. 
+  seguimos avanzando
