@@ -1,40 +1,55 @@
-# Sistema de Pronóstico de Mareas
+# Sistema de Pronóstico de Mareas con Deep Learning
 
-Este sistema permite realizar pronósticos de mareas utilizando datos históricos y técnicas de aprendizaje automático.
+Este proyecto implementa un sistema de pronóstico de mareas utilizando técnicas de deep learning, integrando datos históricos de mareas y presión atmosférica.
+
+## Características
+
+- Pronóstico de mareas usando deep learning
+- Visualización de datos históricos y pronósticos
+- Cálculo de errores y residuales
+- Interfaz web interactiva
+- Monitoreo de niveles críticos
+- Actualización continua del modelo
 
 ## Requisitos
 
-- Python 3.8 o superior
-- Las dependencias listadas en `requirements.txt`
+- Python 3.12.3
+- Dependencias listadas en requirements.txt
 
 ## Instalación
 
-1. Clonar el repositorio
-2. Instalar las dependencias:
+1. Crear un entorno virtual:
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+2. Instalar dependencias:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Uso
-
-Para ejecutar el sistema de pronóstico:
-
+3. Configurar la base de datos:
 ```bash
-python tide_forecast.py
+python manage.py migrate
 ```
 
-El sistema:
-1. Generará datos de muestra para demostración
-2. Entrenará un modelo con los datos históricos
-3. Realizará un pronóstico para las próximas 24 horas
-4. Mostrará una gráfica con los datos históricos y el pronóstico
-5. Imprimirá una tabla con las predicciones
+4. Ejecutar el servidor:
+```bash
+python manage.py runserver
+```
 
-## Notas
+## Estructura del Proyecto
 
-- Este es un sistema de demostración que utiliza datos simulados
-- Para uso en producción, se recomienda:
-  - Integrar datos reales de mareas
-  - Ajustar los parámetros del modelo según la ubicación
-  - Considerar factores adicionales como la luna, el viento, etc. 
-  seguimos avanzando
+- `tide_forecast/`: Aplicación principal de Django
+- `ml_model/`: Módulo de machine learning
+- `data/`: Datos históricos de mareas y presión
+- `templates/`: Plantillas HTML
+- `static/`: Archivos estáticos (CSS, JS, imágenes)
+
+## Uso
+
+1. Acceder a http://localhost:8000
+2. Ver pronósticos actuales
+3. Consultar datos históricos
+4. Monitorear niveles críticos 
